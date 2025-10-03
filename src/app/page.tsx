@@ -1,103 +1,173 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { Headphones, BookOpen, ClipboardList } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-white">
+      {/* iPad横持ち用3ペインレイアウト */}
+      <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6 lg:p-6 lg:h-screen">
+        {/* 左ペイン: 家電サポート */}
+        <Link href="/chatflow?category=support" className="group">
+          <Card className="flex flex-col h-full bg-white border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-14 h-14 rounded-xl bg-blue-500 flex items-center justify-center shadow-sm">
+                  <Headphones className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <CardTitle className="text-2xl font-semibold text-slate-900">
+                    家電サポート
+                  </CardTitle>
+                  <CardDescription className="text-base text-slate-500">
+                    困りごと解決
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-1 space-y-4">
+              <p className="text-slate-600 leading-relaxed">
+                家電の使い方やトラブルを
+                <br />
+                即座に解決します
+              </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                  <span className="text-sm text-slate-700">24時間対応</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                  <span className="text-sm text-slate-700">
+                    トラブルシューティング
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                  <span className="text-sm text-slate-700">操作ガイダンス</span>
+                </div>
+              </div>
+
+              <Button
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white shadow-sm mt-6"
+                size="lg"
+              >
+                開始する
+              </Button>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* 中央ペイン: 家電ナレッジ問い合わせ */}
+        <Link href="/workflow?category=knowledge" className="group">
+          <Card className="flex flex-col h-full bg-white border border-slate-200 hover:border-purple-400 hover:shadow-lg transition-all duration-200">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-14 h-14 rounded-xl bg-purple-500 flex items-center justify-center shadow-sm">
+                  <BookOpen className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <CardTitle className="text-2xl font-semibold text-slate-900">
+                    ナレッジ検索
+                  </CardTitle>
+                  <CardDescription className="text-base text-slate-500">
+                    製品情報・知識
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-1 space-y-4">
+              <p className="text-slate-600 leading-relaxed">
+                豊富な製品知識から
+                <br />
+                最適な情報を提供します
+              </p>
+
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                  <span className="text-sm text-slate-700">製品情報検索</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                  <span className="text-sm text-slate-700">
+                    メンテナンス方法
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                  <span className="text-sm text-slate-700">よくある質問</span>
+                </div>
+              </div>
+
+              <Button
+                className="w-full bg-purple-500 hover:bg-purple-600 text-white shadow-sm mt-6"
+                size="lg"
+              >
+                開始する
+              </Button>
+            </CardContent>
+          </Card>
+        </Link>
+      </div>
+
+      {/* モバイル・タブレット縦持ち用レイアウト */}
+      <div className="lg:hidden container mx-auto px-6 py-8">
+        {/* ヘッダー */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            クルーエージェント
+          </h1>
+          <p className="text-base text-slate-600">ご用件をお選びください</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* カテゴリメニュー */}
+        <div className="grid grid-cols-1 gap-4">
+          <Link href="/chatflow?category=support">
+            <Card className="bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <CardContent className="flex items-center gap-4 p-5">
+                <div className="w-16 h-16 rounded-xl bg-blue-500 flex items-center justify-center shadow-sm flex-shrink-0">
+                  <Headphones className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                    家電サポート
+                  </h3>
+                  <p className="text-sm text-slate-600">使い方・トラブル解決</p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/workflow?category=knowledge">
+            <Card className="bg-white border border-slate-200 hover:border-purple-400 hover:shadow-md transition-all">
+              <CardContent className="flex items-center gap-4 p-5">
+                <div className="w-16 h-16 rounded-xl bg-purple-500 flex items-center justify-center shadow-sm flex-shrink-0">
+                  <BookOpen className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                    ナレッジ検索
+                  </h3>
+                  <p className="text-sm text-slate-600">
+                    製品情報・お手入れ方法
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
