@@ -1,0 +1,1328 @@
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/notion_datasource:0.1.12@2855c4a7cffd3311118ebe70f095e546f99935e47f12c841123146f728534f55
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/google_drive:0.1.6@4bc0cf8f8979ebd7321b91506b4bc8f090b05b769b5d214f2da4ce4c04ce30bd
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/jina_datasource:0.0.5@75942f5bbde870ad28e0345ff5ebf54ebd3aec63f0e66344ef76b88cf06b85c3
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/general_chunker:0.0.7@a685cc66820d0471545499d2ff5c87ed7e51525470155dbc2f82e1114cd2a9d6
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/firecrawl_datasource:0.2.4@37b490ebc52ac30d1c6cbfa538edcddddcfed7d5f5de58982edbd4e2094eb6e2
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/dify_extractor:0.0.5@ba7e2fd9165eda73bfcc68e31a108855197e88706e5556c058e0777ab08409b3
+    version: null
+kind: rag_pipeline
+rag_pipeline:
+  description: ''
+  icon: 📙
+  icon_background: '#FFF4ED'
+  icon_type: emoji
+  icon_url: null
+  name: General Mode-ECO 3 1
+version: 0.1.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features: {}
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: knowledge-index
+      id: 1751337124089-source-1750836372241-target
+      selected: false
+      source: '1751337124089'
+      sourceHandle: source
+      target: '1750836372241'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: tool
+      id: 1753346901505-source-1751337124089-target
+      selected: false
+      source: '1753346901505'
+      sourceHandle: source
+      target: '1751337124089'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1750836391776-source-1753346901505-target
+      selected: false
+      source: '1750836391776'
+      sourceHandle: source
+      target: '1753346901505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: variable-aggregator
+      id: 1753349228522-source-1753346901505-target
+      selected: false
+      source: '1753349228522'
+      sourceHandle: source
+      target: '1753346901505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: variable-aggregator
+      id: 1754023419266-source-1753346901505-target
+      selected: false
+      source: '1754023419266'
+      sourceHandle: source
+      target: '1753346901505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: variable-aggregator
+      id: 1756442998557-source-1756442986174-target
+      selected: false
+      source: '1756442998557'
+      sourceHandle: source
+      target: '1756442986174'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: if-else
+      id: 1756442986174-source-1756443014860-target
+      selected: false
+      source: '1756442986174'
+      sourceHandle: source
+      target: '1756443014860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: variable-aggregator
+      id: 1750836380067-source-1756442986174-target
+      selected: false
+      source: '1750836380067'
+      sourceHandle: source
+      target: '1756442986174'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1756443014860-true-1750836391776-target
+      selected: false
+      source: '1756443014860'
+      sourceHandle: 'true'
+      target: '1750836391776'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1756443014860-false-1753349228522-target
+      selected: false
+      source: '1756443014860'
+      sourceHandle: 'false'
+      target: '1753349228522'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: variable-aggregator
+      id: 1756896212061-source-1753346901505-target
+      source: '1756896212061'
+      sourceHandle: source
+      target: '1753346901505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: variable-aggregator
+      id: 1756907397615-source-1753346901505-target
+      source: '1756907397615'
+      sourceHandle: source
+      target: '1753346901505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        chunk_structure: text_model
+        index_chunk_variable_selector:
+        - '1751337124089'
+        - result
+        indexing_technique: economy
+        keyword_number: 10
+        retrieval_model:
+          score_threshold: 0.5
+          score_threshold_enabled: false
+          search_method: keyword_search
+          top_k: 3
+        selected: false
+        title: ナレッジベース
+        type: knowledge-index
+      height: 114
+      id: '1750836372241'
+      position:
+        x: 479.7628208876065
+        y: 326
+      positionAbsolute:
+        x: 479.7628208876065
+        y: 326
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: File
+        datasource_name: upload-file
+        datasource_parameters: {}
+        fileExtensions:
+        - txt
+        - markdown
+        - mdx
+        - pdf
+        - html
+        - xlsx
+        - xls
+        - vtt
+        - properties
+        - doc
+        - docx
+        - csv
+        - eml
+        - msg
+        - pptx
+        - xml
+        - epub
+        - ppt
+        - md
+        plugin_id: langgenius/file
+        provider_name: file
+        provider_type: local_file
+        selected: false
+        title: File
+        type: datasource
+      height: 52
+      id: '1750836380067'
+      position:
+        x: -1371.6520723158733
+        y: 224.87938381325645
+      positionAbsolute:
+        x: -1371.6520723158733
+        y: 224.87938381325645
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        output_schema:
+          properties:
+            documents:
+              description: the documents extracted from the file
+              items:
+                type: object
+              type: array
+            images:
+              description: The images extracted from the file
+              items:
+                type: object
+              type: array
+          type: object
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: the file to be parsed(support pdf, ppt, pptx, doc, docx, png, jpg,
+              jpeg)
+            ja_JP: 解析するファイル(pdf, ppt, pptx, doc, docx, png, jpg, jpegをサポート)
+            pt_BR: o arquivo a ser analisado (suporta pdf, ppt, pptx, doc, docx, png,
+              jpg, jpeg)
+            zh_Hans: 用于解析的文件(支持 pdf, ppt, pptx, doc, docx, png, jpg, jpeg)
+          label:
+            en_US: file
+            ja_JP: ファイル
+            pt_BR: arquivo
+            zh_Hans: file
+          llm_description: the file to be parsed (support pdf, ppt, pptx, doc, docx,
+            png, jpg, jpeg)
+          max: null
+          min: null
+          name: file
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        params:
+          file: ''
+        provider_id: langgenius/dify_extractor/dify_extractor
+        provider_name: langgenius/dify_extractor/dify_extractor
+        provider_type: builtin
+        selected: false
+        title: Dify Extractor
+        tool_configurations: {}
+        tool_description: Dify Extractor
+        tool_label: Dify Extractor
+        tool_name: dify_extractor
+        tool_node_version: '2'
+        tool_parameters:
+          file:
+            type: variable
+            value:
+            - '1756442986174'
+            - output
+        type: tool
+      height: 52
+      id: '1750836391776'
+      position:
+        x: -417.5334221022782
+        y: 268.1692071834485
+      positionAbsolute:
+        x: -417.5334221022782
+        y: 268.1692071834485
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: TenTen
+        desc: ''
+        height: 318
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"ナレッジパイプライン","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          は、データソースノードを始点とし、ナレッジベースノードを終点とするフローです。一連の処理フローは以下の通りです。 ","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.
+          データソースからドキュメントをインポート","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"2.
+          エクストラクターでドキュメントの内容を抽出","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"3.
+          内容を分割・クリーンアップし、構造化されたチャンクに変換","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"4.
+          ナレッジベースに格納","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ナレッジパイプラインノードで必要となるユーザー入力項目は、オーケストレーションキャンバス右上の「Input
+          Field（入力フィールド）」セクションにて事前に定義・管理します。これにより、エンドユーザーがファイルをナレッジベースへインポートする際に表示される入力項目が決まります。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"ユニーク入力（Unique
+          Inputs）","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":":
+          ここで定義した入力フィールドは、選択したデータソースおよび以降のノードのみで利用可能です。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"グローバル入力（Global
+          Inputs）","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":":
+          データソース以降のすべてのノードで共有され、通常は「Process Documents」ステップで設定されます。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"詳細については、","type":"text","version":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"https://docs.dify.ai/en/guides/knowledge-base/knowledge-pipeline/knowledge-pipeline-orchestration.","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"rel":"noreferrer","target":null,"title":null,"url":"https://docs.dify.ai/en/guides/knowledge-base/knowledge-pipeline/knowledge-pipeline-orchestration"}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 1122
+      height: 318
+      id: '1751252161631'
+      position:
+        x: -1371.6520723158733
+        y: -148.21166969521772
+      positionAbsolute:
+        x: -1371.6520723158733
+        y: -148.21166969521772
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 1122
+    - data:
+        author: TenTen
+        desc: ''
+        height: 465
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"現在、以下4種類の","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"データソース","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"がサポートされています：","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ファイルアップロード（File Upload）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドライブ（Online Drive）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドキュメント（Online Doc）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ウェブクローラー（Web Crawler）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"各データソースは入力および出力形式が異なります。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ファイルアップロードとオンラインドライブの場合は、","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"ファイル","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"が出力されます。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドキュメント（Online Doc）とWebCrawlerの場合は、","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"ページ","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"が出力されます。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Marketplaceではさらに多くのデータソースをご利用いただけます。","type":"text","version":1},{"type":"linebreak","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"一つのナレッジパイプライン内で、複数のデータソースを設定できます。同じデータソースでも異なる設定で複数回選択が可能です。追加された各データソースは、ファイル追加インターフェースでタブとして表示されます。ただし、ファイルのインポート時に選択できるデータソースは一つのみです。選択されたデータソースに基づいて処理が進行します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 318
+      height: 465
+      id: '1751252440357'
+      position:
+        x: -1723.9942193415582
+        y: 224.87938381325645
+      positionAbsolute:
+        x: -1723.9942193415582
+        y: 224.87938381325645
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 318
+    - data:
+        author: TenTen
+        desc: ''
+        height: 430
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"検索拡張生成（RAG）におけるドキュメントエクストラクターとは、PDF・画像・スキャンファイル・手書きメモなど多様なドキュメントから自動でテキストやデータを検出・抽出し、構造化形式へ変換するツールまたはコンポーネントです。これにより、RAGパイプライン内で言語モデルを効率よく活用することが可能となります。
+          ","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"Dify
+          Extractor","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":" とは、Difyが開発した組み込みドキュメントパーサーで、多くの一般的なファイルフォーマットに対応しています。特に
+          `.docx` 形式には専門的な処理を提供します。テキストだけでなく、文書内の画像も抽出・保存し、画像へのアクセス用URLを生成して返すことも可能です。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 430
+      id: '1751253091602'
+      position:
+        x: -417.5334221022782
+        y: 532.832924599999
+      positionAbsolute:
+        x: -417.5334221022782
+        y: 532.832924599999
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: TenTen
+        desc: ''
+        height: 287
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"汎用モード（General
+          Mode）","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"とは、内容をチャンクに分割し、ユーザーのクエリに最も関連性の高いチャンクを抽出してLLMに渡します。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ドキュメント形式や用途に応じて、チャンクの区切り文字、最大長、重複（オーバーラップ）などのルールをカスタマイズ可能です。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          事前処理（Preprocessing）機能により、不要なスペースやURL、メールアドレスを除去し、テキストをクリーンアップできます。","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 287
+      id: '1751253953926'
+      position:
+        x: 184.46657789772178
+        y: 407.42301051148354
+      positionAbsolute:
+        x: 184.46657789772178
+        y: 407.42301051148354
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: TenTen
+        desc: ''
+        height: 462
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ナレッジベースでは、以下の2種類のインデックス方式が利用可能です：","type":"text","version":1},{"type":"linebreak","version":1},{"type":"linebreak","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"高品質モード（High-Quality）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          埋め込みベクトル（Embedding Vector）を用いてベクトル化し、ベクトル検索・全文検索・ハイブリッド検索に対応します。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          精度は高いものの、リソース消費も多くなります。","type":"text","version":1},{"type":"linebreak","version":1},{"type":"linebreak","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"経済的モード（Economical）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          キーワードベースの倒立インデックスを利用し、トークン消費が発生せず、リソースも少なくて済みますが、精度はやや劣ります。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          高品質モードへのアップグレードは可能です。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ただし、ダウングレードする場合は新たにナレッジベースを作成する必要があります。","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 241
+      height: 462
+      id: '1751254117904'
+      position:
+        x: 479.7628208876065
+        y: 472.46585541244207
+      positionAbsolute:
+        x: 479.7628208876065
+        y: 472.46585541244207
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 241
+    - data:
+        is_team_authorization: true
+        output_schema:
+          properties:
+            result:
+              description: The result of the general chunk tool.
+              properties:
+                general_chunks:
+                  items:
+                    description: The chunk of the text.
+                    type: string
+                  type: array
+              type: object
+          type: object
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The text you want to chunk.
+            ja_JP: チャンク化したいテキスト。
+            pt_BR: O texto que você deseja dividir.
+            zh_Hans: 你想要分块的文本。
+          label:
+            en_US: Input Content
+            ja_JP: 入力変数
+            pt_BR: Variável de entrada
+            zh_Hans: 输入变量
+          llm_description: The text you want to chunk.
+          max: null
+          min: null
+          name: input_variable
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The delimiter of the chunks.
+            ja_JP: チャンクの区切り記号。
+            pt_BR: O delimitador dos pedaços.
+            zh_Hans: 块的分隔符。
+          label:
+            en_US: Delimiter
+            ja_JP: 区切り記号
+            pt_BR: Delimitador
+            zh_Hans: 分隔符
+          llm_description: The delimiter of the chunks, the format of the delimiter
+            must be a string.
+          max: null
+          min: null
+          name: delimiter
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The maximum chunk length.
+            ja_JP: 最大長のチャンク。
+            pt_BR: O comprimento máximo do bloco
+            zh_Hans: 最大块的长度。
+          label:
+            en_US: Maximum Chunk Length
+            ja_JP: チャンク最大長
+            pt_BR: Comprimento máximo do bloco
+            zh_Hans: 最大块的长度
+          llm_description: The maximum chunk length, the format of the chunk size
+            must be an integer.
+          max: null
+          min: null
+          name: max_chunk_length
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The chunk overlap length.
+            ja_JP: チャンクの重複長
+            pt_BR: O comprimento de sobreposição dos fragmentos.
+            zh_Hans: 块的重叠长度。
+          label:
+            en_US: Chunk Overlap Length
+            ja_JP: チャンク重複長
+            pt_BR: Comprimento de Sobreposição dos Fragmentos
+            zh_Hans: 块的重叠长度
+          llm_description: The chunk overlap length, the format of the chunk overlap
+            length must be an integer.
+          max: null
+          min: null
+          name: chunk_overlap_length
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Replace consecutive spaces, newlines and tabs
+            ja_JP: 連続のスペース、改行、まだはタブを置換する
+            pt_BR: Substituir espaços consecutivos, novas linhas e tabulações
+            zh_Hans: 替换连续的空格、换行符和制表符
+          label:
+            en_US: Replace consecutive spaces, newlines and tabs
+            ja_JP: 連続のスペース、改行、まだはタブを置換する
+            pt_BR: Substituir espaços consecutivos, novas linhas e tabulações
+            zh_Hans: 替换连续的空格、换行符和制表符
+          llm_description: Replace consecutive spaces, newlines and tabs, the format
+            of the replace must be a boolean.
+          max: null
+          min: null
+          name: replace_consecutive_spaces_newlines_tabs
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Delete all URLs and email addresses
+            ja_JP: すべてのURLとメールアドレスを削除する
+            pt_BR: Excluir todos os URLs e endereços de e-mail
+            zh_Hans: 删除所有URL和电子邮件地址
+          label:
+            en_US: Delete all URLs and email addresses
+            ja_JP: すべてのURLとメールアドレスを削除する
+            pt_BR: Excluir todos os URLs e endereços de e-mail
+            zh_Hans: 删除所有URL和电子邮件地址
+          llm_description: Delete all URLs and email addresses, the format of the
+            delete must be a boolean.
+          max: null
+          min: null
+          name: delete_all_urls_and_email_addresses
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        params:
+          chunk_overlap_length: ''
+          delete_all_urls_and_email_addresses: ''
+          delimiter: ''
+          input_variable: ''
+          max_chunk_length: ''
+          replace_consecutive_spaces_newlines_tabs: ''
+        provider_id: langgenius/general_chunker/general_chunker
+        provider_name: langgenius/general_chunker/general_chunker
+        provider_type: builtin
+        selected: false
+        title: General Chunker
+        tool_configurations: {}
+        tool_description: A tool for general text chunking mode, the chunks retrieved
+          and recalled are the same.
+        tool_label: General Chunker
+        tool_name: general_chunker
+        tool_node_version: '2'
+        tool_parameters:
+          chunk_overlap_length:
+            type: variable
+            value:
+            - rag
+            - shared
+            - Chunk_Overlap_Length
+          delete_all_urls_and_email_addresses:
+            type: variable
+            value:
+            - rag
+            - shared
+            - clean_2
+          delimiter:
+            type: mixed
+            value: '{{#rag.shared.Dilmiter#}}'
+          input_variable:
+            type: mixed
+            value: '{{#1753346901505.output#}}'
+          max_chunk_length:
+            type: variable
+            value:
+            - rag
+            - shared
+            - Maximum_Chunk_Length
+          replace_consecutive_spaces_newlines_tabs:
+            type: variable
+            value:
+            - rag
+            - shared
+            - clean_1
+        type: tool
+      height: 52
+      id: '1751337124089'
+      position:
+        x: 184.46657789772178
+        y: 326
+      positionAbsolute:
+        x: 184.46657789772178
+        y: 326
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        output_type: string
+        selected: false
+        title: Variable Aggregator
+        type: variable-aggregator
+        variables:
+        - - '1750836391776'
+          - text
+        - - '1753349228522'
+          - text
+        - - '1754023419266'
+          - content
+        - - '1756896212061'
+          - content
+      height: 186
+      id: '1753346901505'
+      position:
+        x: -117.24452412456148
+        y: 326
+      positionAbsolute:
+        x: -117.24452412456148
+        y: 326
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_array_file: false
+        selected: true
+        title: Doc Extractor
+        type: document-extractor
+        variable_selector:
+        - '1756442986174'
+        - output
+      height: 92
+      id: '1753349228522'
+      position:
+        x: -435.42786707980525
+        y: 421.46519934002936
+      positionAbsolute:
+        x: -435.42786707980525
+        y: 421.46519934002936
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: Notion
+        datasource_name: notion_datasource
+        datasource_parameters: {}
+        plugin_id: langgenius/notion_datasource
+        provider_name: notion_datasource
+        provider_type: online_document
+        selected: false
+        title: Notion
+        type: datasource
+      height: 52
+      id: '1754023419266'
+      position:
+        x: -1369.6904698303242
+        y: 440.01452302398053
+      positionAbsolute:
+        x: -1369.6904698303242
+        y: 440.01452302398053
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        output_type: file
+        selected: false
+        title: Variable Aggregator
+        type: variable-aggregator
+        variables:
+        - - '1750836380067'
+          - file
+        - - '1756442998557'
+          - file
+      height: 134
+      id: '1756442986174'
+      position:
+        x: -1067.06980963949
+        y: 236.10252072775984
+      positionAbsolute:
+        x: -1067.06980963949
+        y: 236.10252072775984
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: Google Drive
+        datasource_name: google_drive
+        datasource_parameters: {}
+        plugin_id: langgenius/google_drive
+        provider_name: google_drive
+        provider_type: online_drive
+        selected: false
+        title: Google Drive
+        type: datasource
+      height: 52
+      id: '1756442998557'
+      position:
+        x: -1371.6520723158733
+        y: 326
+      positionAbsolute:
+        x: -1371.6520723158733
+        y: 326
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 1581dd11-7898-41f4-962f-937283ba7e01
+            value: .xlsx
+            varType: string
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 92abb46d-d7e4-46e7-a5e1-8a29bb45d528
+            value: .xls
+            varType: string
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 1dde5ae7-754d-4e83-96b2-fe1f02995d8b
+            value: .md
+            varType: string
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 7e1a80e5-c32a-46a4-8f92-8912c64972aa
+            value: .markdown
+            varType: string
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 53abfe95-c7d0-4f63-ad37-17d425d25106
+            value: .mdx
+            varType: string
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 436877b8-8c0a-4cc6-9565-92754db08571
+            value: .html
+            varType: file
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 5e3e375e-750b-4204-8ac3-9a1174a5ab7c
+            value: .htm
+            varType: file
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 1a84a784-a797-4f96-98a0-33a9b48ceb2b
+            value: .docx
+            varType: file
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 62d11445-876a-493f-85d3-8fc020146bdd
+            value: .csv
+            varType: file
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          - comparison_operator: is
+            id: 02c4bce8-7668-4ccd-b750-4281f314b231
+            value: .txt
+            varType: file
+            variable_selector:
+            - '1756442986174'
+            - output
+            - extension
+          id: 'true'
+          logical_operator: or
+        selected: false
+        title: IF/ELSE
+        type: if-else
+      height: 358
+      id: '1756443014860'
+      position:
+        x: -733.5977815139424
+        y: 236.10252072775984
+      positionAbsolute:
+        x: -733.5977815139424
+        y: 236.10252072775984
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: Jina Reader
+        datasource_name: jina_reader
+        datasource_parameters:
+          crawl_sub_pages:
+            type: variable
+            value:
+            - rag
+            - '1756896212061'
+            - jina_subpages
+          limit:
+            type: variable
+            value:
+            - rag
+            - '1756896212061'
+            - jina_limit
+          url:
+            type: mixed
+            value: '{{#rag.1756896212061.jina_url#}}'
+          use_sitemap:
+            type: variable
+            value:
+            - rag
+            - '1756896212061'
+            - jian_sitemap
+        plugin_id: langgenius/jina_datasource
+        provider_name: jinareader
+        provider_type: website_crawl
+        selected: false
+        title: Jina Reader
+        type: datasource
+      height: 52
+      id: '1756896212061'
+      position:
+        x: -1371.6520723158733
+        y: 538.9988445953813
+      positionAbsolute:
+        x: -1371.6520723158733
+        y: 538.9988445953813
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: Firecrawl
+        datasource_name: crawl
+        datasource_parameters:
+          crawl_subpages:
+            type: variable
+            value:
+            - rag
+            - '1756907397615'
+            - firecrawl_subpages
+          exclude_paths:
+            type: mixed
+            value: '{{#rag.1756907397615.exclude_paths#}}'
+          include_paths:
+            type: mixed
+            value: '{{#rag.1756907397615.include_paths#}}'
+          limit:
+            type: variable
+            value:
+            - rag
+            - '1756907397615'
+            - max_pages
+          max_depth:
+            type: variable
+            value:
+            - rag
+            - '1756907397615'
+            - max_depth
+          only_main_content:
+            type: variable
+            value:
+            - rag
+            - '1756907397615'
+            - main_content
+          url:
+            type: mixed
+            value: '{{#rag.1756907397615.firecrawl_url1#}}'
+        plugin_id: langgenius/firecrawl_datasource
+        provider_name: firecrawl
+        provider_type: website_crawl
+        selected: false
+        title: Firecrawl
+        type: datasource
+      height: 52
+      id: '1756907397615'
+      position:
+        x: -1371.6520723158733
+        y: 644.3296146102903
+      positionAbsolute:
+        x: -1371.6520723158733
+        y: 644.3296146102903
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 696.8293366072784
+      y: -261.11511219409556
+      zoom: 0.9500154948281291
+  rag_pipeline_variables:
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1753688365254'
+    default_value: null
+    label: URL
+    max_length: 256
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: text-input
+    unit: null
+    variable: jina_reader_url
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1753688365254'
+    default_value: 10
+    label: Limit
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: number
+    unit: pages
+    variable: jina_reader_imit
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1753688365254'
+    default_value: true
+    label: Crawl sub-pages
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: Crawl_sub_pages_2
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1753688365254'
+    default_value: true
+    label: Use sitemap
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: Use_sitemap
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756896212061'
+    default_value: null
+    label: URL
+    max_length: 256
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: text-input
+    unit: null
+    variable: jina_url
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756896212061'
+    default_value: 10
+    label: Limit
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: number
+    unit: pages
+    variable: jina_limit
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756896212061'
+    default_value: true
+    label: Use sitemap
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: Follow the sitemap to crawl the site. If not, Jina Reader will crawl
+      iteratively based on page relevance, yielding fewer but higher-quality pages.
+    type: checkbox
+    unit: null
+    variable: jian_sitemap
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756896212061'
+    default_value: true
+    label: Crawl subpages
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: jina_subpages
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: null
+    label: URL
+    max_length: 256
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: text-input
+    unit: null
+    variable: firecrawl_url1
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: true
+    label: firecrawl_subpages
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: firecrawl_subpages
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: null
+    label: Exclude paths
+    max_length: 256
+    options: []
+    placeholder: blog/*,/about/*
+    required: false
+    tooltips: null
+    type: text-input
+    unit: null
+    variable: exclude_paths
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: null
+    label: include_paths
+    max_length: 256
+    options: []
+    placeholder: articles/*
+    required: false
+    tooltips: null
+    type: text-input
+    unit: null
+    variable: include_paths
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: 0
+    label: Max depth
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: Maximum depth to crawl relative to the entered URL. Depth 0 just scrapes
+      the page of the entered url, depth 1 scrapes the url and everything after enteredURL
+      + one /, and so on.
+    type: number
+    unit: null
+    variable: max_depth
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: 10
+    label: Limit
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: number
+    unit: null
+    variable: max_pages
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: '1756907397615'
+    default_value: true
+    label: Extract only main content (no headers, navs, footers, etc.)
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: main_content
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: \n\n
+    label: Dilmiter
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: A delimiter is the character used to separate text. \n\n and \n are
+      commonly used delimiters for separating paragraphs and lines. Combined with
+      commas (\n\n,\n), paragraphs will be segmented by lines when exceeding the maximum
+      chunk length. You can also use special delimiters defined by yourself (e.g.
+      ***).
+    type: text-input
+    unit: null
+    variable: Dilmiter
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: 1024
+    label: Maximum Chunk Length
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: number
+    unit: tokens
+    variable: Maximum_Chunk_Length
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: 128
+    label: Chunk Overlap Length
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: Setting the chunk overlap can maintain the semantic relevance between
+      them, enhancing the retrieve effect. It is recommended to set 10%-25% of the
+      maximum chunk size.
+    type: number
+    unit: tokens
+    variable: Chunk_Overlap_Length
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: true
+    label: Replace consecutive spaces, newlines and tabs.
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: clean_1
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: null
+    label: Delete all URLs and email addresses.
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: checkbox
+    unit: null
+    variable: clean_2

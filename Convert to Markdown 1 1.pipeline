@@ -1,0 +1,724 @@
+dependencies: []
+kind: rag_pipeline
+rag_pipeline:
+  description: ''
+  icon: 📙
+  icon_background: '#FFF4ED'
+  icon_type: emoji
+  icon_url: null
+  name: Convert to Markdown 1 1
+version: 0.1.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features: {}
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: knowledge-index
+      id: 1751336942081-source-1750400198569-target
+      selected: false
+      source: '1751336942081'
+      sourceHandle: source
+      target: '1750400198569'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: datasource
+        targetType: tool
+      id: 1750400203722-source-1751359716720-target
+      selected: false
+      source: '1750400203722'
+      sourceHandle: source
+      target: '1751359716720'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1751359716720-source-1751336942081-target
+      source: '1751359716720'
+      sourceHandle: source
+      target: '1751336942081'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        chunk_structure: hierarchical_model
+        embedding_model: jina-embeddings-v2-base-en
+        embedding_model_provider: langgenius/jina/jina
+        index_chunk_variable_selector:
+        - '1751336942081'
+        - result
+        indexing_technique: high_quality
+        keyword_number: 10
+        retrieval_model:
+          hybridSearchMode: weighted_score
+          score_threshold: 0.5
+          score_threshold_enabled: false
+          search_method: hybrid_search
+          top_k: 3
+          vector_setting:
+            embedding_model_name: jina-embeddings-v2-base-en
+            embedding_provider_name: langgenius/jina/jina
+        selected: false
+        title: Knowledge Base
+        type: knowledge-index
+      height: 114
+      id: '1750400198569'
+      position:
+        x: 357.7591396590142
+        y: 282
+      positionAbsolute:
+        x: 357.7591396590142
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        datasource_configurations: {}
+        datasource_label: File
+        datasource_name: upload-file
+        datasource_parameters: {}
+        fileExtensions:
+        - html
+        - xlsx
+        - xls
+        - doc
+        - docx
+        - csv
+        - pptx
+        - xml
+        - ppt
+        - txt
+        plugin_id: langgenius/file
+        provider_name: file
+        provider_type: local_file
+        selected: false
+        title: File
+        type: datasource
+      height: 52
+      id: '1750400203722'
+      position:
+        x: -580.684520226929
+        y: 282
+      positionAbsolute:
+        x: -580.684520226929
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: TenTen
+        desc: ''
+        height: 402
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"現在、以下4種類の","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"データソース","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"がサポートされています：","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ファイルアップロード（File Upload）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドライブ（Online Drive）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドキュメント（Online Doc）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ウェブクローラー（Web Crawler）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"各データソースは入力および出力形式が異なります。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ファイルアップロードとオンラインドライブの場合は、","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"ファイル","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"が出力されます。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          オンラインドキュメント（Online Doc）とWebCrawlerの場合は、","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"ページ","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"が出力されます。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"Marketplaceではさらに多くのデータソースをご利用いただけます。","type":"text","version":1},{"type":"linebreak","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"一つのナレッジパイプライン内で、複数のデータソースを設定できます。同じデータソースでも異なる設定で複数回選択が可能です。追加された各データソースは、ファイル追加インターフェースでタブとして表示されます。ただし、ファイルのインポート時に選択できるデータソースは一つのみです。選択されたデータソースに基づいて処理が進行します。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 405
+      height: 402
+      id: '1751264451381'
+      position:
+        x: -1034.2054006208518
+        y: 282
+      positionAbsolute:
+        x: -1034.2054006208518
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 405
+    - data:
+        author: TenTen
+        desc: ''
+        height: 292
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"ナレッジパイプライン","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"
+          は、データソースノードを始点とし、ナレッジベースノードを終点とするフローです。一連の処理フローは以下の通りです。 ","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"1.
+          データソースからドキュメントをインポート","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"2.
+          エクストラクターでドキュメントの内容を抽出","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"3.
+          内容を分割・クリーンアップし、構造化されたチャンクに変換","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"4.
+          ナレッジベースに格納","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ナレッジパイプラインノードで必要となるユーザー入力項目は、オーケストレーションキャンバス右上の「Input
+          Field（入力フィールド）」セクションにて事前に定義・管理します。これにより、エンドユーザーがファイルをナレッジベースへインポートする際に表示される入力項目が決まります。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"ユニーク入力（Unique
+          Inputs）","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":":
+          ここで定義した入力フィールドは、選択したデータソースおよび以降のノードのみで利用可能です。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"グローバル入力（Global
+          Inputs）","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":":
+          データソース以降のすべてのノードで共有され、通常は「Process Documents」ステップで設定されます。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"詳細については、","type":"text","version":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"https://docs.dify.ai/en/guides/knowledge-base/knowledge-pipeline/knowledge-pipeline-orchestration.","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"rel":"noreferrer","target":null,"title":null,"url":"https://docs.dify.ai/en/guides/knowledge-base/knowledge-pipeline/knowledge-pipeline-orchestration"}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 1182
+      height: 292
+      id: '1751266376760'
+      position:
+        x: -580.684520226929
+        y: -51.89140137509632
+      positionAbsolute:
+        x: -580.684520226929
+        y: -51.89140137509632
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 1182
+    - data:
+        author: TenTen
+        desc: ''
+        height: 417
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"検索拡張生成(RAG)
+          におけるドキュメントエクストラクターとは、PDF、画像、スキャンファイル、手書きメモなど多様な文書からテキストやデータを自動的に抽出し、構造化するツールです。これにより、RAG
+          パイプライン内の言語モデルが効果的に利用できる形式へ変換されます。","type":"text","version":1},{"type":"linebreak","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"Markitdown","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"は、従来のドキュメント抽出ノードの有力な代替製品として、Dify
+          エコシステム内で強力なファイル変換機能を提供しています。MarkItDown のプラグインベースのアーキテクチャにより、複数のファイル形式をシームレスに
+          Markdown 形式へ変換することが可能です。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 241
+      height: 417
+      id: '1751266402561'
+      position:
+        x: -266.96080929383595
+        y: 372.64040589639495
+      positionAbsolute:
+        x: -266.96080929383595
+        y: 372.64040589639495
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 241
+    - data:
+        author: TenTen
+        desc: ''
+        height: 598
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"親子モード","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"は、RAGシステムにおける豊富な文脈情報の提供と、クエリに対する高精度なマッチングという二つの要件のバランスを最適化するため、二層構造の階層的アプローチを採用しています。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"以下に、このアプローチの本質的なメカニズムを説明します：","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""},{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"子チャンクによるクエリマッチング","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"段落内の一文程度の短く的確な情報単位（子チャンク）を用いて、ユーザーのクエリとマッチングします。これにより、より関連性の高い情報を正確に検索できます。","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"listitem","version":1,"textFormat":1,"value":1},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"親チャンクによる文脈の拡充","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"子チャンクを含む、より広い範囲（セクションや段落、場合によっては文書全体）を親チャンクとして取得します。これにより、言語モデル（LLM）に十分な文脈情報を提供できます。","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"listitem","version":1,"textFormat":1,"value":2}],"direction":"ltr","format":"","indent":0,"type":"list","version":1,"textFormat":1,"listType":"bullet","start":1,"tag":"ul"},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"親子モードではさらに、ドキュメント形式や利用シーンに応じてチャンクの長さや重複部分を柔軟に設定できます。また、不要な空白・URL・メールアドレスの削除など、前処理オプションも利用可能です。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 598
+      id: '1751266447821'
+      position:
+        x: 37.74090119950054
+        y: 372.64040589639495
+      positionAbsolute:
+        x: 37.74090119950054
+        y: 372.64040589639495
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: TenTen
+        desc: ''
+        height: 550
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"ナレッジベースでは、以下の2種類のインデックス方式が利用可能です：","type":"text","version":1},{"type":"linebreak","version":1},{"type":"linebreak","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"高品質モード（High-Quality）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          埋め込みベクトル（Embedding Vector）を用いてベクトル化し、ベクトル検索・全文検索・ハイブリッド検索に対応します。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          精度は高いものの、リソース消費も多くなります。","type":"text","version":1},{"type":"linebreak","version":1},{"type":"linebreak","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"経済的モード（Economical）","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          キーワードベースの倒立インデックスを利用し、トークン消費が発生せず、リソースも少なくて済みますが、精度はやや劣ります。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          高品質モードへのアップグレードは可能です。","type":"text","version":1},{"type":"linebreak","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"-
+          ただし、ダウングレードする場合は新たにナレッジベースを作成する必要があります。","type":"text","version":1},{"type":"linebreak","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"*
+          親子モード","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"および
+          ","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"Q&Aモード","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"は、精密なベクトル検索と豊富な文脈情報の両方が必要となるため、","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"高品質モード","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"のインデックス方式のみに対応しています。","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 241
+      height: 550
+      id: '1751266580099'
+      position:
+        x: 357.7591396590142
+        y: 434.3959856026883
+      positionAbsolute:
+        x: 357.7591396590142
+        y: 434.3959856026883
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 241
+    - data:
+        is_team_authorization: true
+        output_schema:
+          properties:
+            result:
+              description: Parent child chunks result
+              items:
+                type: object
+              type: array
+          type: object
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          label:
+            en_US: Input Content
+            ja_JP: 入力コンテント
+            pt_BR: Conteúdo de Entrada
+            zh_Hans: 输入文本
+          llm_description: The text you want to chunk.
+          max: null
+          min: null
+          name: input_text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: paragraph
+          form: llm
+          human_description:
+            en_US: Split text into paragraphs based on separator and maximum chunk
+              length, using split text as parent block or entire document as parent
+              block and directly retrieve.
+            ja_JP: セパレーターと最大チャンク長に基づいてテキストを段落に分割し、分割されたテキスト を親ブロックとして使用するか、文書全体を親ブロックとして使用して直接取得します。
+            pt_BR: Dividir texto em parágrafos com base no separador e no comprimento
+              máximo do bloco, usando o texto dividido como bloco pai ou documento
+              completo como bloco pai e diretamente recuperá-lo.
+            zh_Hans: 根据分隔符和最大块长度将文本拆分为段落，使用拆分文本作为检索的父块或整个文档用作父块并直接检索。
+          label:
+            en_US: Parent Mode
+            ja_JP: 親子モード
+            pt_BR: Modo Pai
+            zh_Hans: 父块模式
+          llm_description: Split text into paragraphs based on separator and maximum
+            chunk length, using split text as parent block or entire document as parent
+            block and directly retrieve.
+          max: null
+          min: null
+          name: parent_mode
+          options:
+          - label:
+              en_US: Paragraph
+              ja_JP: 段落
+              pt_BR: Parágrafo
+              zh_Hans: 段落
+            value: paragraph
+          - label:
+              en_US: Full Document
+              ja_JP: 全文
+              pt_BR: Documento Completo
+              zh_Hans: 全文
+            value: full_doc
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: '
+
+
+            '
+          form: llm
+          human_description:
+            en_US: Separator used for chunking
+            ja_JP: 親チャンク分割に使用するセパレート
+            pt_BR: Separador usado para divisão
+            zh_Hans: 用于分块的分隔符
+          label:
+            en_US: Parent Delimiter
+            ja_JP: 親区切り記号
+            pt_BR: Separador de Pai
+            zh_Hans: 父块分隔符
+          llm_description: The separator used to split chunks
+          max: null
+          min: null
+          name: separator
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 1024
+          form: llm
+          human_description:
+            en_US: Maximum length for chunking
+            ja_JP: 親チャンク分割の最大長
+            pt_BR: Comprimento máximo para divisão
+            zh_Hans: 用于分块的最大长度
+          label:
+            en_US: Maximum Parent Chunk Length
+            ja_JP: 親チャンクの最大長
+            pt_BR: Comprimento Máximo do Bloco Pai
+            zh_Hans: 最大父块长度
+          llm_description: Maximum length allowed per chunk
+          max: null
+          min: null
+          name: max_length
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: '. '
+          form: llm
+          human_description:
+            en_US: Separator used for subchunking
+            ja_JP: 子チャンク分割に使用するセパレート
+            pt_BR: Separador usado para subdivisão
+            zh_Hans: 用于子分块的分隔符
+          label:
+            en_US: Child Delimiter
+            ja_JP: 子区切り記号
+            pt_BR: Separador de Subdivisão
+            zh_Hans: 子分块分隔符
+          llm_description: The separator used to split subchunks
+          max: null
+          min: null
+          name: subchunk_separator
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 512
+          form: llm
+          human_description:
+            en_US: Maximum length for subchunking
+            ja_JP: 子チャンクの最大長
+            pt_BR: Comprimento máximo para subdivisão
+            zh_Hans: 用于子分块的最大长度
+          label:
+            en_US: Maximum Child Chunk Length
+            ja_JP: 子チャンクの最大長
+            pt_BR: Comprimento Máximo de Subdivisão
+            zh_Hans: 子分块最大长度
+          llm_description: Maximum length allowed per subchunk
+          max: null
+          min: null
+          name: subchunk_max_length
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: 0
+          form: llm
+          human_description:
+            en_US: Whether to remove consecutive spaces, newlines and tabs
+            ja_JP: 連続のスペース、改行、まだはタブを削除するかどうか
+            pt_BR: Se deve remover espaços extras no texto
+            zh_Hans: 是否移除文本中的连续空格、换行符和制表符
+          label:
+            en_US: Replace consecutive spaces, newlines and tabs
+            ja_JP: 連続のスペース、改行、まだはタブを置換する
+            pt_BR: Substituir espaços consecutivos, novas linhas e guias
+            zh_Hans: 替换连续空格、换行符和制表符
+          llm_description: Whether to remove consecutive spaces, newlines and tabs
+          max: null
+          min: null
+          name: remove_extra_spaces
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 0
+          form: llm
+          human_description:
+            en_US: Whether to remove URLs and emails in the text
+            ja_JP: テキスト内のURLやメールアドレスを削除するかどうか
+            pt_BR: Se deve remover URLs e e-mails no texto
+            zh_Hans: 是否移除文本中的URL和电子邮件地址
+          label:
+            en_US: Delete all URLs and email addresses
+            ja_JP: URLとメールアドレスを削除
+            pt_BR: Remover todas as URLs e e-mails
+            zh_Hans: 删除所有URL和电子邮件地址
+          llm_description: Whether to remove URLs and emails in the text
+          max: null
+          min: null
+          name: remove_urls_emails
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        params:
+          input_text: ''
+          max_length: ''
+          parent_mode: ''
+          remove_extra_spaces: ''
+          remove_urls_emails: ''
+          separator: ''
+          subchunk_max_length: ''
+          subchunk_separator: ''
+        provider_id: langgenius/parentchild_chunker/parentchild_chunker
+        provider_name: langgenius/parentchild_chunker/parentchild_chunker
+        provider_type: builtin
+        selected: false
+        title: Parent-child Chunker
+        tool_configurations: {}
+        tool_description: Process documents into parent-child chunk structures
+        tool_label: Parent-child Chunker
+        tool_name: parentchild_chunker
+        tool_node_version: '2'
+        tool_parameters:
+          input_text:
+            type: mixed
+            value: '{{#1751359716720.text#}}'
+          max_length:
+            type: variable
+            value:
+            - rag
+            - shared
+            - Maximum_Parent_Length
+          parent_mode:
+            type: variable
+            value:
+            - rag
+            - shared
+            - Parent_Mode
+          separator:
+            type: mixed
+            value: '{{#rag.shared.Parent_Delimiter#}}'
+          subchunk_max_length:
+            type: variable
+            value:
+            - rag
+            - shared
+            - Maximum_Child_Length
+          subchunk_separator:
+            type: mixed
+            value: '{{#rag.shared.Child_Delimiter#}}'
+        type: tool
+      height: 52
+      id: '1751336942081'
+      position:
+        x: 37.74090119950054
+        y: 282
+      positionAbsolute:
+        x: 37.74090119950054
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Upload files for processing
+            ja_JP: 処理するためにファイルをアップロード
+            pt_BR: Carregar arquivos para processamento
+            zh_Hans: 上传文件进行处理
+          label:
+            en_US: Files
+            ja_JP: ファイル
+            pt_BR: Arquivos
+            zh_Hans: 文件
+          llm_description: ''
+          max: null
+          min: null
+          name: files
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: files
+        params:
+          files: ''
+        provider_id: yevanchen/markitdown/markitdown
+        provider_name: yevanchen/markitdown/markitdown
+        provider_type: builtin
+        selected: false
+        title: markitdown
+        tool_configurations: {}
+        tool_description: Python tool for converting files and office documents to
+          Markdown.
+        tool_label: markitdown
+        tool_name: markitdown
+        tool_node_version: '2'
+        tool_parameters:
+          files:
+            type: variable
+            value:
+            - '1750400203722'
+            - file
+        type: tool
+      height: 52
+      id: '1751359716720'
+      position:
+        x: -266.96080929383595
+        y: 282
+      positionAbsolute:
+        x: -266.96080929383595
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: TenTen
+        desc: ''
+        height: 301
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"MarkItDown","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"は、多様なファイル形式の変換および処理に推奨されており、とりわけコンテンツを
+          Markdown 形式に変換する用途で優れた性能を発揮します。特に、DOCX、XLSX、PPTX などのネイティブな Office ファイルを
+          Markdown 形式へ変換する際に適しており、情報処理の効率化に寄与します。ただし、一部のユーザーから指摘されているように、PDF ファイルの内容抽出にはあまり向いていないため、PDF
+          ファイルの変換には推奨されません。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":1,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 301
+      id: '1753425718313'
+      position:
+        x: -580.684520226929
+        y: 372.64040589639495
+      positionAbsolute:
+        x: -580.684520226929
+        y: 372.64040589639495
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    viewport:
+      x: 871.2541719446799
+      y: -147.37894484008882
+      zoom: 0.7655867122508321
+  rag_pipeline_variables:
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: paragraph
+    label: Parent Mode
+    max_length: 48
+    options:
+    - paragraph
+    - full_doc
+    placeholder: null
+    required: true
+    tooltips: 'Parent Mode provides two options: paragraph mode splits text into paragraphs
+      as parent chunks for retrieval, while full_doc mode uses the entire document
+      as a single parent chunk (text beyond 10,000 tokens will be truncated).'
+    type: select
+    unit: null
+    variable: Parent_Mode
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: \n\n
+    label: Parent Delimiter
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: A delimiter is the character used to separate text. \n\n is recommended
+      for splitting the original document into large parent chunks. You can also use
+      special delimiters defined by yourself.
+    type: text-input
+    unit: null
+    variable: Parent_Delimiter
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: 1024
+    label: Maximum Parent Length
+    max_length: 48
+    options: []
+    placeholder: null
+    required: false
+    tooltips: null
+    type: number
+    unit: tokens
+    variable: Maximum_Parent_Length
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: \n
+    label: Child Delimiter
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: A delimiter is the character used to separate text. \n is recommended
+      for splitting parent chunks into small child chunks. You can also use special
+      delimiters defined by yourself.
+    type: text-input
+    unit: null
+    variable: Child_Delimiter
+  - allow_file_extension: null
+    allow_file_upload_methods: null
+    allowed_file_types: null
+    belong_to_node_id: shared
+    default_value: 256
+    label: Maximum Child Length
+    max_length: 48
+    options: []
+    placeholder: null
+    required: true
+    tooltips: null
+    type: number
+    unit: tokens
+    variable: Maximum_Child_Length
